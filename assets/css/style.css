@@ -1,0 +1,130 @@
+:root {
+    --text-light: #000000;
+}
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+.page-header {
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;;
+    background-image: url(../images/egypt.jpg);
+    background-size:cover;
+    
+}
+header {
+    color: wheat;
+}
+.heading {
+    text-wrap: nowrap;
+}
+.categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+    padding: 1em;
+    gap: 1em;
+    
+}
+
+
+  
+
+  .categories__item {
+    position: relative;
+    color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .25s ease;
+   
+   
+}
+.categories__item:hover {
+    transform: scale(1.07); 
+
+}
+
+.categories__item:hover .categories__item-image {
+    transform: scale(1.2); 
+
+}
+
+.categories:hover > .categories__item:not(:hover){
+filter: blur(5px);
+transition: filter 1s ease;
+}
+
+.categories__item-image {
+    filter: brightness(0.9) saturate(1) contrast(1);
+    border-radius: 10px;
+    transition: transform 2s ease; 
+}
+
+ .categories__item:hover .categories__item-description {
+    top: 87%;
+    left:0%;
+    animation: center1 3s ease forwards;
+ }
+ 
+ .categories__item:not(:hover) .categories__item-description {
+    animation: return-center1 3s ease forwards;
+}
+
+ 
+ @keyframes center1 {
+     0% {
+         transform: none;
+         top: 87%;
+         left: 0;    
+     }
+     100% {
+         transform: translate(-50%, -50%);
+         top: 62%;
+         left: 50%;
+     }
+ }
+
+
+ @keyframes return-center1 {
+    0% {
+        transform: translate(-50%, -50%);
+        top: 62%;
+        left: 50%;  
+    }
+    100% {
+        transform: none;
+        top: 87%;
+        left: 0;
+    }
+}
+.categories__item-description {
+    margin: 0;
+    padding: 1em;
+    color: var(--text-light);
+    color: white;
+    font-size: 80%; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: top 1s, left 1s;
+    
+}
+  
+.img-responsive {
+    width: 100%;
+    display: block;
+}
+figure, h2 {
+    margin: 0;
+}
+.heading {
+    margin: 0.25em 0;
+    font-weight: bold;
+}
+.heading--h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: var(--text-light);
+}
